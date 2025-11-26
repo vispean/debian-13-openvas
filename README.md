@@ -1,2 +1,32 @@
-# debian-13-openvas
+# Debian 13 openVAS
+
 Provisioning of a debian 13 machine with an openVAS installation
+
+## Build virtual machine in virtualbox
+
+- open console/terminal in this directory
+- issue the following command: `vagrant up`
+
+## Vagrant up
+
+This should:
+- download the corresponding vagrant box and add it to `~/.vagrant.d/boxes`
+- load the box into virtualbox
+- start the new virtual machine in virtualbox
+- replace ssh keys
+- provision a few scripts (installing a web server, a database, php and phpMyAdmin)
+
+## Options within Vagrantfile
+
+- `vb.gui`: start the virtual machine with a window while provisioning
+- `vb.memory`: set desired memory size of the virtual machine (default is 2048 MB)
+- `config.vm.provision`: provision an additional script for smaller conveniences (requires a desktop environment)
+
+## Windows remarks
+
+- if the host is a windows machine, make sure that you installed virtualbox with admin rights (run the installation exe as administrator; is required for setting up network adapters), otherwise private networks / host-only adapters won't work, aka this provisioning
+
+## Connect from host to guest
+- to get the ip address of the guest machine run on the guest machine the following command: `ip addr show`
+- open the browser on the host machine
+- enter https://`<insert guest ip address>`:9392 (for example: https://192.168.56.10:9392)
