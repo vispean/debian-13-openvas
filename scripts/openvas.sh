@@ -48,6 +48,9 @@ function setUpOpenVAS {
     apt-get purge -y libmagic-dev
     apt-get autoremove -y
     apt-get autoclean
+
+    # change web interface password
+    gvmd --user=admin --new-password=admin
 }
 
 echo "#################"
