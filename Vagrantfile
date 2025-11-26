@@ -12,8 +12,8 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "loch-tech/debian-13-trixie-ch"
-  #config.vm.box = "loch-tech/debian-13-trixie-ch-kde"
+  config.vm.box = "loch-tech/debian-12-bookworm-ch"
+  #config.vm.box = "loch-tech/debian-12-bookworm-ch-kde"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |vb|
     # Name of the machine:
-    vb.name = "debian-13-trixie-ch-openvas"
+    vb.name = "debian-12-bookworm-ch-openvas"
 
     # Display the VirtualBox GUI when booting the machine
     #vb.gui = true

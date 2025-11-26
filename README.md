@@ -1,6 +1,6 @@
-# Debian 13 openVAS
+# Debian 12 openVAS
 
-Provisioning of a debian 13 machine with an openVAS installation
+Provisioning of a debian 12 machine with an openVAS installation
 
 ## Build virtual machine in virtualbox
 
