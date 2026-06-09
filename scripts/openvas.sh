@@ -10,14 +10,18 @@
     #  @package     Debian-12-Trixie-CH
     #  @subpackage  openVAS
     #  @author      Christian Locher <locher@faithpro.ch>
-    #  @copyright   2025 Faithful programming
+    #  @copyright   2026 Faithful programming
     #  @license     http://www.gnu.org/licenses/gpl-3.0.en.html GNU/GPLv3
-    #  @version     alpha - 2025-11-26
+    #  @version     alpha - 2026-06-09
     #  @since       File available since release alpha
     #
     #########
 
 function updateDebian {
+    # pre-configure grub to not prompt for install devices non-interactively
+    echo "grub-pc grub-pc/install_devices multiselect /dev/sda" | sudo debconf-set-selections
+    echo "grub-pc grub-pc/install_devices_empty boolean true" | sudo debconf-set-selections
+
     apt-get update
     apt-get full-upgrade -y
 }
